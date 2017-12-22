@@ -34,41 +34,45 @@ if(isset($_POST['cancel'])){
 	<title>LaMantequilla</title>
 </head>
 <body>
-	<h1>CADASTRAR PRODUTOS</h1>
-	<?php
-	if (isset($result)) {
-		?>
-		<div class="alert alert-success">
-			<?php echo $result; ?>
-		</div>
-		<?php
-	}else if(isset($error)){
-		?>
-		<div class="alert alert-danger">
-			<?php echo $error; ?>
-		</div>
-		<?php
-	}
-	?>
-	<div class="col-md-6">
-		<form action="cadastrarProduto.php" method="post">
-			<div class="form-group">
-				<label>Nome</label>
-				<input type="text" name="nome" class="form-control">
-				<label>Quantidade</label>
-				<input type="number" name="quantidade" class="form-control">
-				<label>Descrição</label>
-				<textarea name="descricao" class="form-control"></textarea>
-				<label>Preço Custo</label>
-				<input type="text" name="precoCusto" class="form-control" onkeyup="moeda(this);">
-				<label>Preço Venda</label>
-				<input type="text" name="precoVenda" class="form-control" onkeyup="moeda(this);">
+	<div class="container">
+		<div class="row">
+			<h1>CADASTRAR PRODUTOS</h1>
+			<?php
+			if (isset($result)) {
+				?>
+				<div class="alert alert-success">
+					<?php echo $result; ?>
+				</div>
+				<?php
+			}else if(isset($error)){
+				?>
+				<div class="alert alert-danger">
+					<?php echo $error; ?>
+				</div>
+				<?php
+			}
+			?>
+			<div class="col-md-6">
+				<form action="cadastrarProduto.php" method="post">
+					<div class="form-group">
+						<label>Nome</label>
+						<input type="text" name="nome" class="form-control">
+						<label>Quantidade</label>
+						<input type="number" name="quantidade" class="form-control">
+						<label>Descrição</label>
+						<textarea name="descricao" class="form-control"></textarea>
+						<label>Preço Custo</label>
+						<input type="text" name="precoCusto" class="form-control" onkeyup="moeda(this);">
+						<label>Preço Venda</label>
+						<input type="text" name="precoVenda" class="form-control" onkeyup="moeda(this);">
+					</div>
+					<div class="form-group">
+						<button type="submit" name="cancel" class="btn btn-danger">Cancelar</button>
+						<button type="submit" name="insert" class="btn btn-success">Cadastrar</button>
+					</div>			
+				</form>
 			</div>
-			<div class="form-group">
-				<button type="submit" name="cancel" class="btn btn-danger">Cancelar</button>
-				<button type="submit" name="insert" class="btn btn-success">Cadastrar</button>
-			</div>			
-		</form>
+		</div>
 	</div>
 </body>
 </html>

@@ -18,7 +18,7 @@ class Produto{
 	}
 
 	function setIdProduto($value){
-		$this->idproduto = $value;
+		$this->idProduto = $value;
 	}
 
 	function setNome($value){
