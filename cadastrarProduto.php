@@ -56,15 +56,15 @@ if(isset($_POST['cancel'])){
 				<form action="cadastrarProduto.php" method="post">
 					<div class="form-group">
 						<label>Nome</label>
-						<input type="text" name="nome" class="form-control">
+						<input type="text" name="nome" class="form-control" required>
 						<label>Quantidade</label>
-						<input type="number" name="quantidade" class="form-control">
+						<input type="number" name="quantidade" class="form-control" required>
 						<label>Descrição</label>
-						<textarea name="descricao" class="form-control"></textarea>
+						<textarea name="descricao" class="form-control" required></textarea>
 						<label>Preço Custo</label>
-						<input type="text" name="precoCusto" class="form-control" onkeyup="moeda(this);">
+						<input type="text" name="precoCusto" class="form-control" onkeyup="moeda(this);" required>
 						<label>Preço Venda</label>
-						<input type="text" name="precoVenda" class="form-control" onkeyup="moeda(this);">
+						<input type="text" name="precoVenda" class="form-control" onkeyup="moeda(this);" required>
 					</div>
 					<div class="form-group">
 						<button type="submit" name="cancel" class="btn btn-danger">Cancelar</button>

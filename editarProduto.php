@@ -3,6 +3,23 @@ require_once 'assets/php/classes/classProduto.php';
 
 $prod = new Produto();
 
+if(isset($_POST['edit'])){
+	$prod->setIdProduto($_POST['idProduto']);
+	$prod->setNome($_POST['nome']);
+	$prod->setQuantidade($_POST['quantidade']);
+	$prod->setDescricao($_POST['descricao']);
+	$prod->setPrecoCusto($_POST['precoCusto']);
+	$prod->setPrecoVenda($_POST['precoVenda']);
+
+
+	if($prod->edit() == 1){
+		$result = "Produto editado com sucesso!";
+	}else{
+		$error = "Erro ao editar";
+	}
+
+}
+
 if(isset($_POST['delete'])){
 	$prod->setIdProduto($_POST['idProduto']);
 
@@ -94,7 +111,25 @@ if(isset($_POST['delete'])){
 									<h3>Editar produto</h3>
 								</div>
 								<div class="modal-body">
-
+									<form action="editarProduto.php" method="post">
+										<div class="form-group">
+											<label>Nome</label>
+											<input type="text" name="nome" class="form-control" value="<?php echo $row->nome ?>" required>
+											<label>Quantidade</label>
+											<input type="number" name="quantidade" class="form-control" value="<?php echo $row->quantidade ?>" required>
+											<label>Descrição</label>
+											<textarea name="descricao" class="form-control" required><?php echo $row->descricao ?></textarea>
+											<label>Preço Custo</label>
+											<input type="text" name="precoCusto" value="<?php echo $row->precoCusto ?>" class="form-control" onkeyup="moeda(this);" required>
+											<label>Preço Venda</label>
+											<input type="text" name="precoVenda" value="<?php echo $row->precoVenda ?>" class="form-control" onkeyup="moeda(this);" required>
+										</div>
+										<div class="form-group">
+											<input type="hidden" name="idProduto" value="<?php echo $row->idProduto; ?>">
+											<button type="submit" name="edit" class="btn btn-success">Salvar</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+										</div>		
+									</form>
 								</div>
 							</div>
 						</div>
@@ -109,7 +144,7 @@ if(isset($_POST['delete'])){
 									<h3>Deletar produto</h3>	
 								</div>
 								<div class="modal-body">
-									<h3> Deseja deletar o produto <?php echo $row->nome ?>? </h3>
+									<h5> Deseja deletar o produto <?php echo $row->nome ?>? </h5>
 									<form action="editarProduto.php" method="post">
 										<input type="hidden" name="idProduto" value="<?php echo $row->idProduto; ?>">
 										<button type="submit" class="btn btn-success" name="delete">Sim</button>
@@ -124,3 +159,17 @@ if(isset($_POST['delete'])){
 			</div>
 		</body>
 		</html>
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script>
+			function moeda(z) {
+				v = z.value;
+        v = v.replace(/\D/g, "") // permite digitar apenas numero
+        v = v.replace(/(\d{1})(\d{14})$/, "$1.$2") // coloca ponto antes dos ultimos digitos
+        v = v.replace(/(\d{1})(\d{11})$/, "$1.$2") // coloca ponto antes dos ultimos 11 digitos
+        v = v.replace(/(\d{1})(\d{8})$/, "$1.$2") // coloca ponto antes dos ultimos 8 digitos
+        v = v.replace(/(\d{1})(\d{5})$/, "$1.$2") // coloca ponto antes dos ultimos 5 digitos
+        v = v.replace(/(\d{1})(\d{1,2})$/, "$1,$2") // coloca virgula antes dos ultimos 2 digitos
+        z.value = v;
+    }
+</script>

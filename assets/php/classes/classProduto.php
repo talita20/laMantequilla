@@ -60,7 +60,7 @@ class Produto{
 	public function edit(){
 		try{
 			$stmt = $this->conn->prepare("UPDATE `produto` SET `nome` = :nome, `quantidade` = :quantidade, `descricao` = :descricao, `precoCusto` = :precoCusto, `precoVenda` = :precoVenda WHERE `idProduto` = :idProduto");
-			$stmt->bindParam(":idProduto", $this->id);
+			$stmt->bindParam(":idProduto", $this->idProduto);
 			$stmt->bindParam(":nome", $this->nome);
 			$stmt->bindParam(":quantidade", $this->quantidade);
 			$stmt->bindParam(":descricao", $this->descricao);
