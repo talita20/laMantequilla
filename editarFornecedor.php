@@ -2,6 +2,28 @@
 require_once 'assets/php/classes/classFornecedor.php';
 
 $forne = new Fornecedor();
+if(isset($_POST['edit'])){
+	$forne->setIdFornecedor($_POST['idFornecedor']);
+	$forne->setNomeEmpresa($_POST['nomeEmpresa']);
+	$forne->setNomeRepresentante($_POST['nomeRepresentante']);
+	$forne->setCnpj($_POST['cnpj']);
+	$forne->setEndereco($_POST['endereco']);
+	$forne->setTelefoneEmpresa($_POST['telefoneEmpresa']);
+	$forne->setTelefoneEmpresa($_POST['telefoneEmpresa']);
+	$forne->setTelefoneRepresentante($_POST['telefoneRepresentante']);
+	$forne->setEmailEmpresa($_POST['emailEmpresa']);
+	$forne->setEmailRepresentante($_POST['emailRepresentante']);
+
+
+
+
+	if($forne->edit() == 1){
+		$result = "Fornecedor editado com sucesso!";
+	}else{
+		$error = "Erro ao editar";
+	}
+
+}
 
 if(isset($_POST['delete'])){
 	$forne->setIdFornecedor($_POST['idFornecedor']);
@@ -100,6 +122,35 @@ if(isset($_POST['delete'])){
 								</div>
 								<div class="modal-body">
 
+								</div>
+							</div>
+						</div>
+					</div>
+					<form action="editarFornecedor.php" method="post">
+										<div class="form-group">
+											<label>Nome da Empresa</label>
+											<input type="text" name="nomeEmpresa" class="form-control" value="<?php echo $row->nomeEmpresa ?>" required>
+											<label>Nome do Representante</label>
+											<input type="text" name="nomeRepresentante" class="form-control" value="<?php echo $row->nomeRepresentante ?>" required>
+											<label>CNPJ</label>
+											<input type="text" name="cnpj" class="form-control" value="<?php echo $row->cnpj?>" required>
+											<label>Endereço</label>
+											<input type="text" name="endereco" value="<?php echo $row->endereco ?>" class="form-control" value="<?php echo $row->endereco ?>"  required>
+											<label>Telefone da Empresa</label>
+											<input type="text" name="telefoneEmpresa" class="form-control" value="<?php echo $row->telefoneEmpresa ?>"   required>
+											<label>Telefone do Representante</label>
+											<input type="text" name="telefoneRepresentante" class="form-control" value="<?php echo $row->telefoneRepresentante ?>"   required>
+											<label>Email da Empresa</label>
+											<input type="text" name="emailEmpresa" class="form-control" value="<?php echo $row->emailEmpresa ?>"   required>
+											<label>Email do Representante</label>
+											<input type="text" name="emailRepresentante" class="form-control" value="<?php echo $row->emailRepresentante ?>"   required>
+										</div>
+										<div class="form-group">
+											<input type="hidden" name="idFornecedor" value="<?php echo $row->idFornecedor; ?>">
+											<button type="submit" name="edit" class="btn btn-success">Salvar</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
+										</div>		
+									</form>
 								</div>
 							</div>
 						</div>
