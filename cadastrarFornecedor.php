@@ -7,11 +7,11 @@ if(isset($_POST['insert'])){
 	$forne->setNomeEmpresa($_POST['nomeEmpresa']);
 	$forne->setNomeRepresentante($_POST['nomeRepresentante']);
 	$forne->setCnpj($_POST['cnpj']);
-	$prod->setEndereco($_POST['endereco']);
-	$prod->setTelefoneEmpresa($_POST['telefoneEmpresa']);
-	$prod->setTelefoneRepresentante($_POST['telefoneRepresentante']);
-	$prod->setEmailEmpresa($_POST['emailEmpresa']);
-	$prod->setEmailRepresentante($_POST['emailRepresentante']);
+	$forne->setEndereco($_POST['endereco']);
+	$forne->setTelefoneEmpresa($_POST['telefoneEmpresa']);
+	$forne->setTelefoneRepresentante($_POST['telefoneRepresentante']);
+	$forne->setEmailEmpresa($_POST['emailEmpresa']);
+	$forne->setEmailRepresentante($_POST['emailRepresentante']);
 
 	if($forne->insert() == 1){
 		$result = "Fornecedor inserido com sucesso!";

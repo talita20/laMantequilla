@@ -28,7 +28,7 @@ if(isset($_POST['edit'])){
 if(isset($_POST['delete'])){
 	$forne->setIdFornecedor($_POST['idFornecedor']);
 
-	if($prod->delete() == 1){
+	if($forne->delete() == 1){
 		$result = "Fornecedor deletado com sucesso!";
 	}else{
 		$error = "Erro ao deletar";
