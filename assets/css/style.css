@@ -41,9 +41,10 @@ html, body {
 .login {
 
   max-width: 280px;
-  min-height: 500px;
+  min-height: 400px;
   margin: 30px auto;
   background-color: rgba(10,10,10,.68);
+  border-radius: 20px;
 }
 
 #conteudo{
