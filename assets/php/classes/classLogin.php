@@ -46,7 +46,7 @@ class Login{
 	}
 
 	public function locate(){
-		$stmt = $this->conn->prepare("SELECT * FROM `produto` WHERE `email` = :email");
+		$stmt = $this->conn->prepare("SELECT * FROM `login` WHERE `email` = :email");
 		$stmt->bindParam(":email", $this->email);
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_OBJ);
