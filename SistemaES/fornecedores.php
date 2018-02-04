@@ -2,7 +2,7 @@
 require_once 'header.php';
 ?>
   <div class="content-wrapper">
-<div id="main" class="container-fluid" style="margin-top: 50px">
+<div id="main" class="container-fluid">
  
  	<div id="top" class="row">
  		<div class="col-md-12">
@@ -46,8 +46,8 @@ require_once 'header.php';
 					<td>Rua do Pão, 154</td>
 					<td>35422254</td>
 					<td class="actions">
-						<a class="btn btn-success btn-xs" href="edit.html">Visualizar</a>
-						<a class="btn btn-warning btn-xs" href="edit.html">Editar</a>
+						<a class="btn btn-success btn-xs" href="visualizarFornecedor.php">Visualizar</a>
+						<a class="btn btn-warning btn-xs" href="editarFornecedor.php">Editar</a>
 						<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal">Excluir</a>
 					</td>
 				</tr>
@@ -95,6 +95,14 @@ require_once 'header.php';
     var active = document.getElementById("fornecedores");
     active.classList.add("active");
 </script>
+
+
+<script type="application/javascript">
+    var active = document.getElementById("fornecedoresvisualizar");
+    active.classList.add("active");
+</script>
+
+
 
 
 <?php

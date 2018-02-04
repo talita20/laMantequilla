@@ -43,7 +43,7 @@
 
   <header class="main-header">
     <!-- Logo -->
-    <a href="index2.html" class="logo">
+    <a href="index.php" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
       <span class="logo-mini"> <img src="pao.png" height="20px"></span>
       <!-- logo for regular state and mobile devices -->
@@ -91,8 +91,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="funcionarios.php"><i class="fa fa-circle-o"></i> Visualizar</a></li>
-            <li><a href="./cadastrarfuncionario.php"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
+            <li id="funcionariovisualizar"><a href="funcionarios.php"><i class="fa fa-circle-o"></i> Visualizar</a></li>
+            <li id="funcionariocadastrar"><a href="./cadastrarFuncionario.php"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
           </ul>
         </li>
          <li id="produtos" class="treeview">
@@ -103,8 +103,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="produtos.php"><i class="fa fa-circle-o"></i> Visualizar</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
+            <li id="produtosvisualizar"><a href="produtos.php"><i class="fa fa-circle-o"></i> Visualizar</a></li>
+            <li id="produtoscadastrar"><a href="./cadastrarProduto.php"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
           </ul>
         </li>
         <li id="fornecedores" class="treeview">
@@ -115,8 +115,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li class="active"><a href="fornecedores.php"><i class="fa fa-circle-o"></i> Visualizar</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
+            <li id="fornecedoresvisualizar"><a href="fornecedores.php"><i class="fa fa-circle-o"></i> Visualizar</a></li>
+            <li id="fornecedorescadastrar"><a href="./cadastrarFornecedor.php"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
           </ul>
         </li>
       </ul>
