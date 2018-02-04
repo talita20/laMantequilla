@@ -13,31 +13,28 @@
 </head>
 
 <body>
-<div class="container">
-  <div id="login" class="login">
-  <div id="conteudo">
-  <div class="header">
-     <p id="titulo">La Mantequilla</p>
-  </div>
-    <div class="login-form">
-      <form>
-      <div class="email">
-      <input type="email" class="form-control" id="frase" aria-describedby="emailHelp" placeholder="E-mail">
+  <div class="container">
+    <div id="login" class="login">
+      <div id="conteudo">
+        <div class="header">
+         <p id="titulo">La Mantequilla</p>
+       </div>
+       <form action="assets/php/validaLogin.php" method="post">
+         <div class="login-form">
+          <div class="email">
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="E-mail" required>
+          </div>
+          <div class="senha">
+           <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
+         </div>
+       </div>
+       <div class="call-to-action">
+        <button id="login-button" type="submit" name="login">Log In</button>
+        <p>Esqueceu a senha? <a>Recupere aqui!</a></p>
       </div>
-    </form>
-    <form>
-      <div class="senha">
-       <input type="password" class="form-control" id="frase" placeholder="Senha">
-      </div>
-
-    </form>
-    </div>
-    <div class="call-to-action">
-      <button id="login-button" type="button">Log In</button>
-      <p>Esqueceu a senha? <a>Recupere aqui!</a></p>
     </div>
   </div>
-  </div>
+</div>
 </div>
 <script src="assets/js/scripts.js"></script>
 <script src="assets/js/bootstrap.js"></script>
