@@ -99,7 +99,7 @@ if(isset($_POST['delete'])){
 								<td><?php echo $row->precoCusto ?></td>
 								<td><?php echo $row->precoVenda ?></td>
 								<td class="actions">
-									<a class="btn btn-warning btn-xs" href="editarProduto.php">Editar</a>
+									<a class="btn btn-warning btn-xs" href="editarProduto.php?idProduto=<?php echo $row->idProduto ?>">Editar</a>
 									<a class="btn btn-danger btn-xs"  href="#" data-toggle="modal" data-target="#delete-modal<?php echo $row->idProduto ?>">Excluir</a>
 								</td>
 							</tr>
