@@ -31,12 +31,10 @@ if(sha1($senha) == $login->senha){
 	} else {
 		switch ($_SESSION['tipo']) {
 			case 1:
-			echo "Redireciona para a home do adm";
-		            //header("Location: ../../home.php");
+		    header("Location: ../../SistemaES/index.php");
 			break;
 			case 2:
-			echo "Redireciona para a home do funcionario";
-		            //header("Location: ../../home.php");
+		    header("Location: ../../SistemaES/index.php");
 			break;
 		}
 	}
