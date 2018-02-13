@@ -30,7 +30,7 @@
        </div>
        <div class="call-to-action">
         <button id="login-button" type="submit" name="login">Log In</button>
-        <p>Esqueceu a senha? <a>Recupere aqui!</a></p>
+      <!--   <p>Esqueceu a senha? <a>Recupere aqui!</a></p> -->
       </div>
     </div>
   </div>
