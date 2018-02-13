@@ -1,43 +1,49 @@
 <?php
-	require_once 'header.php';
+	require_once 'header.php'; 
+  require_once '../assets/php/classes/classFuncionario.php';
+
+$func = new Funcionario();
+$func->setIdFuncionario($_GET['idFuncionario']);
+$funcionario = $func->view();
 ?>
 	 <div class="content-wrapper">
 		<div id="main" class="container-fluid">
           <!-- general form elements disabled -->
+          <form action="funcionarios.php" method="post">
           <div class="box box-warning" style="border-color:#222D32; margin-top: 20px;">
             <div class="box-header with-border">
               <h3 class="box-title">Atualizar Funcionário</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form">
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nome</label>
-                  <input type="text" class="form-control">
+                  <input type="text" name="nome" class="form-control" value="<?php echo $funcionario->nome ?>">
                 </div>
                 <div class="form-group">
                   <label>CPF</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="cpf" class="form-control" value="<?php echo $funcionario->cpf ?>" maxlength="11">
                 </div>
                 <div class="form-group">
                   <label>Endereço</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="endereco" class="form-control" value="<?php echo $funcionario->endereco ?>">
                 </div>
                 <div class="form-group">
                   <label>Cargo</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="cargo" class="form-control" value="<?php echo $funcionario->cargo ?>">
                 </div>
-              </form>
             </div>
            <div class="box-footer">
-            <button type="submit" class="btn btn-success">Atualizar</button>
+            <input type="hidden" name="idFuncionario" value="<?php echo $funcionario->idFuncionario ?>">
+            <button type="submit" name="edit" class="btn btn-success">Atualizar</button>
             <a href="./funcionarios.php">
             <button type="submit" class="btn btn-danger">Cancelar</button>
           </a>
           </div>
             <!-- /.box-body -->
           </div>
+        </form>
          </div>
          </div>
 

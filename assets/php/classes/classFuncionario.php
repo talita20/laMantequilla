@@ -6,12 +6,14 @@ class Funcionario{
 	private $nome;
 	private $endereco;
 	private $cargo;
+
 	public function __construct() {
 		$database = new Database();
 		$dbSet = $database->dbSet();
 		$this->conn = $dbSet;
 	}
-	function setIdFuncionario($value){
+	
+	function setidFuncionario($value){
 		$this->idFuncionario = $value;
 	}
 	function setNome($value){
@@ -43,8 +45,8 @@ class Funcionario{
 	}
 	public function edit(){
 		try{
-			$stmt = $this->conn->prepare("UPDATE `funcionario` SET `nome` = :nome, `cpf` = :cpf, `endereco` = :endereco, `cargo` = :cargo WHERE `idfuncionario` = :idfuncionario");
-			$stmt->bindParam(":idfuncionario", $this->id);
+			$stmt = $this->conn->prepare("UPDATE `funcionario` SET `nome` = :nome, `cpf` = :cpf, `endereco` = :endereco, `cargo` = :cargo WHERE `idFuncionario` = :idFuncionario");
+			$stmt->bindParam(":idFuncionario", $this->idFuncionario);
 			$stmt->bindParam(":nome", $this->nome);
 			$stmt->bindParam(":cpf", $this->cpf);
 			$stmt->bindParam(":endereco", $this->endereco);
@@ -59,8 +61,8 @@ class Funcionario{
 	
 	public function delete(){
 		try{
-			$stmt = $this->conn->prepare("DELETE FROM `funcionario` WHERE `idfuncionario` = :idfuncionario");
-			$stmt->bindParam(":idfuncionario", $this->idfuncionario);
+			$stmt = $this->conn->prepare("DELETE FROM `funcionario` WHERE `idFuncionario` = :idFuncionario");
+			$stmt->bindParam(":idFuncionario", $this->idFuncionario);
 			$stmt->execute();
 			return 1;
 		}catch(PDOException $e){
@@ -68,9 +70,10 @@ class Funcionario{
 			return 0;
 		}
 	}
+
 	public function view(){
-		$stmt = $this->conn->prepare("SELECT * FROM `funcionario` WHERE `idfuncionario` = :idfuncionario");
-		$stmt->bindParam(":idfuncionario", $this->idfuncionario);
+		$stmt = $this->conn->prepare("SELECT * FROM `funcionario` WHERE `idFuncionario` = :idFuncionario");
+		$stmt->bindParam(":idFuncionario", $this->idFuncionario);
 		$stmt->execute();
 		$row = $stmt->fetch(PDO::FETCH_OBJ);
 		return $row;
