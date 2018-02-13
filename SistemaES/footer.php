@@ -1,9 +1,5 @@
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <div class="pull-right hidden-xs">
-      <b>Version</b> 2.4.0
-    </div>
-    <strong>Desenvolvido com base no template <a href="https://adminlte.io">Almsaeed Studio</a>.</strong> Todos os direitos reservados.
   </footer>
 
   
