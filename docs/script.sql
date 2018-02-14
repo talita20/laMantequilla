@@ -21,7 +21,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `lamantequilla`
 --
-
+CREATE DATABASE lamantequilla;
+USE lamantequilla;
 -- --------------------------------------------------------
 
 --
@@ -39,6 +40,18 @@ CREATE TABLE `fornecedor` (
   `emailEmpresa` varchar(100) NOT NULL,
   `emailRepresentante` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `fornecedor` (`idFornecedor`, `nomeEmpresa`, `nomeRepresentante`, `cnpj`, `endereco`, `telefoneEmpresa`, `telefoneRepresentante`, `emailEmpresa`, `emailRepresentante`) VALUES
+(1, 'Farinhas Vilma', 'Vilma', '2344556789002', 'Rua Brasília, Centro', 38516666, 98076543, 'farinhasvilma@gmail.com', 'vilma@gmail.com'),
+(2, 'Leite Itambé', 'João', '43561903927831', 'Rua Maranhão ,Morro', 889021341, 900213432, 'leiteitambe@gmail.com', 'joao@gmail.com'),
+(3, 'Pó Royal', 'Maria', '78263910743092', 'Rua Novo Horizonte ,Bela Vista', 897493112, 265675140, 'poroyal@gmail.com', 'maria@gmail.com'),
+(4, 'Parmalate', 'Lucia', '90128945893209', 'Rua Amazonas,Antônio Carlos', 485419440, 424906639, 'parmalate@gmail.com', 'lucia@gmail.com'),
+(5, 'Alfa', 'Talita', '56718930291834', 'Rua Nova Lima, Belo Horizonte', 760716262, 451016655, 'alfa@gmail.com', 'talita@gmail.com'),
+(6, 'Cotochés', 'Sander', '90184390219034', 'Rua Olinda,São Paulo', 189630872, 141683589, 'cotcohes@gmail.com', 'sander@gmail.com'),
+(7, 'Ovos Dacodorna', 'Nicole', '90023891203321', 'Rua Alvinopolis,Rio de Janeiro', 118223063, 885095792, 'dacodorna@gmail.com', 'nicole@gmail.com'),
+(8, 'Dona Benda', 'Benta', '89012317843902', 'Rua Monte Negro,Rio Grande do Sul', 971842588, 491401175, 'donabenta@gmail.com', 'benta@gmail.com'),
+(9, 'Maizena', 'Victor', '78290189332145', 'Rua Beija Flot, São Paulo', 743584688, 429614391, 'maizena@gmail.com', 'victor@gmail.com'),
+(10, 'Piracanjubá', 'Bruna', '45902389012312', 'Rua Mato Grosso,João Monlevade', 146303994, 450542479, 'piracanjuba@gmail.com', 'bruna@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -59,11 +72,16 @@ CREATE TABLE `funcionario` (
 --
 
 INSERT INTO `funcionario` (`idFuncionario`, `cpf`, `nome`, `endereco`, `cargo`) VALUES
-(1, '10850060000', 'Hilda T. Barron', 'Ap #657-5847 Sem Rd.', 'Confeiteira'),
-(2, '21270177111', 'Ross B. Robles', 'Ap #292-9589 Integer Ave', 'Contador'),
-(3, '12139025222', 'Addison H. Carlson', 'P.O. Box 157, 5472 Tristique Road', 'Presidente'),
-(4, '47637367333', 'Xander Q. Franco', 'P.O. Box 375, 3053 Nibh Avenue', 'Confeiteiro'),
-(5, '18205910444', 'Ivy A. Mcknight', '566 Semper, Street', 'Vendedor');
+(1, '90328919543', 'Alice', 'Rua Maranhão,Satélite', 'Gerente'),
+(2, '21904328954', 'Talita', 'Rua Monte Sinai,Centro', 'Diretora'),
+(3, '90319093901', 'Sander', 'Rua José de Alencar,Alvorada', 'Presidente'),
+(4, '89301290221', 'Nicole', 'Rua 11 de Setembro,Vale do Sol', 'Funcionária'),
+(5, '90321893424', 'Thiago', 'Rua Santa Luzia,Santa Barbára', 'Diretor'),
+(6, '90217843290', 'João', 'Rua Amazonas, Vila Tanque', 'Funcionário'),
+(7, '12390218943', 'Maria', 'Rua Nova Lima, Novo Horizonte', 'Diretora Administrativo Finaceira'),
+(8, '91290213284', 'Diana', 'Rua Beija Flor,Rosário', 'Assessora'),
+(9, '91239154356', 'Juliana', 'Rua 13 de Março,Lucília', 'Funcionária'),
+(10, '23190432894', 'André', 'Rua Mato Grosso,Loanda', 'Funcionário');
 
 -- --------------------------------------------------------
 
@@ -84,8 +102,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`idLogin`, `email`, `senha`, `tipo`, `Funcionario_idFuncionario`) VALUES
-(1, 'lamantequilla@alfa.com', '9dbf7c1488382487931d10235fc84a74bff5d2f4', 1, 3),
-(2, 'hilda@alfa.com', 'db5fbafff95e2d0b6a305732cf8c663d0402bc19', 2, 1);
+(1, 'lamantequilla@alfa.com', 'd033e22ae348aeb5660fc2140aec35850c4da997', 1, 3),
+(2, 'funcionario@alfa.com', '3802bbe7c14128ebd50dbfdd4db95c1ffdc8425b', 2, 1);
 
 -- --------------------------------------------------------
 
@@ -107,12 +125,16 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`idProduto`, `nome`, `quantidade`, `descricao`, `precoCusto`, `precoVenda`) VALUES
-(1, 'Farinha de trigo', 400, 'Farinha de trigo', '1,11', '3,33'),
-(2, 'Fermento ', 1000, 'Fermento em pó', '1,99', '2,99'),
-(3, 'Açúcar Mascavo', 350, 'Açúcar mascavo', '1,20', '2,20'),
-(4, 'Sal', 500, 'Sal', '1,50', '2,99'),
-(5, 'Manteiga', 1800, 'Manteiga', '2,99', '3,99'),
-(6, 'Milho', 200, 'Milho verde', '1,89', '2,08');
+(1, 'Farinha de Trigo', 7, 'Farinha Dona Benta para fabricar pães', 1, 3),
+(2, 'Ovos', 3, 'Ovos para a fabricação', 0.5, 1),
+(3, 'Pó Royal', 9, 'Fermento químico para bolos', 1, 2),
+(4, 'Amido de Milho', 7, 'Utilizar a marca maizena para fabricação', 2, 4),
+(5, 'Leite', 1, 'Leite Desnatado', 0.6, 2),
+(6, 'Manteiga', 6, 'Utilizada para untar a massa', 2, 5),
+(7, 'Sal', 4, 'Inserir sal nos ingredientes dos pães', 1.5, 4),
+(8, 'Açúcar', 8, 'Utilizar açúcar refinado', 2, 3),
+(9, 'Queijo', 6, 'Utilizar para fazer pão de queijo', 0.6, 2),
+(10, 'Aveia', 4, 'Ingrediente para pão integral', 0.9, 2.5);
 
 --
 -- Indexes for dumped tables
