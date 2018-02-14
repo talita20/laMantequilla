@@ -55,14 +55,14 @@ if(isset($_POST['delete'])){
 			</div>
 			<div class="col-sm-6">
 
-				<div class="input-group h2">
+				<!-- <div class="input-group h2">
 					<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
 					<span class="input-group-btn">
 						<button class="btn btn-primary" type="submit">
 							<span class="glyphicon glyphicon-search"></span>
 						</button>
 					</span>
-				</div>
+				</div> -->
 
 			</div>
 		</div> <!-- /#top -->

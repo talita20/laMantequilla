@@ -5,6 +5,7 @@ require_once '../assets/php/classes/classProduto.php';
 $prod = new Produto();
 
 if(isset($_POST['edit'])){
+	echo "id=" .$_POST['idProduto'];
 	$prod->setIdProduto($_POST['idProduto']);
 	$prod->setNome($_POST['nome']);
 	$prod->setQuantidade($_POST['quantidade']);
@@ -57,15 +58,16 @@ if(isset($_POST['delete'])){
 			</div>
 			<div class="col-sm-6">
 
+				<!-- <form action="produtos.php" method="get">
 				<div class="input-group h2">
-					<input name="data[search]" class="form-control" id="search" type="text" placeholder="Pesquisar Itens">
+					<input name="nome" class="form-control" id="nome" type="text" placeholder="Pesquisar Itens">
 					<span class="input-group-btn">
-						<button class="btn btn-primary" type="submit">
+						<button class="btn btn-primary" type="submit" name="pesquisa" id="pesquisa">
 							<span class="glyphicon glyphicon-search"></span>
 						</button>
 					</span>
 				</div>
-
+				</form> -->
 			</div>
 		</div> <!-- /#top -->
 
@@ -136,6 +138,7 @@ if(isset($_POST['delete'])){
 					</div>
 				</div>
 			</div>
+		</form>
 			<?php } ?>
 
 			<script type="application/javascript">

@@ -1,5 +1,11 @@
 <?php
 	require_once 'header.php';
+  require_once '../assets/php/classes/classFornecedor.php';
+
+$forne = new Fornecedor();
+$forne->setIdFornecedor($_GET['idFornecedor']);
+$fornecedor = $forne->view();
+
 ?>
 	 <div class="content-wrapper">
 		<div id="main" class="container-fluid">
@@ -10,41 +16,39 @@
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <form role="form">
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nome da Empresa</label>
-                  <input type="text" class="form-control">
+                  <input type="text" name="nomeEmpresa" class="form-control" value="<?php echo $fornecedor->nomeEmpresa ?> ">
                 </div>
                 <div class="form-group">
                   <label>Nome do Representante</label>
-                  <input type="text" class="form-control">
+                  <input type="text" name="nomeRepresentante" class="form-control" value="<?php echo $fornecedor->nomeRepresentante ?> ">
                 </div>
                 <div class="form-group">
                   <label>CNPJ</label>
-                  <input type="text" class="form-control"  >
+                  <input type="text" name="cnpj" class="form-control" maxlength="14" value="<?php echo $fornecedor->cnpj ?> ">
                 </div>
                 <div class="form-group">
                   <label>Endereço</label>
-                  <input type="text" class="form-control" >
+                  <input type="text" name="endereco" class="form-control" value="<?php echo $fornecedor->endereco ?> ">
                 </div>
                  <div class="form-group">
                   <label>Telefone da Empresa</label>
-                  <input type="text" class="form-control">
+                  <input type="text" name="telefoneEmpresa" class="form-control" value="<?php echo $fornecedor->telefoneEmpresa ?> ">
                 </div>
                  <div class="form-group">
                   <label>Telefone do Representante</label>
-                  <input type="text" class="form-control">
+                  <input type="text" name="telefoneRepresentante" class="form-control" value="<?php echo $fornecedor->telefoneRepresentante ?> ">
                 </div>
                 <div class="form-group">
                   <label>Email da Empresa</label>
-                  <input type="email" class="form-control">
+                  <input type="email" name="emailEmpresa" class="form-control" value="<?php echo $fornecedor->emailEmpresa ?> ">
                 </div>
                 <div class="form-group">
                   <label>Email do Representante</label>
-                  <input type="email" class="form-control">
+                  <input type="email" name="emailRepresentante" class="form-control" value="<?php echo $fornecedor->emailRepresentante ?> ">
                 </div>
-              </form>
             </div>
            <div class="box-footer">
             <a href="./fornecedores.php">

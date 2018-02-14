@@ -5,7 +5,6 @@ require_once '../assets/php/classes/classProduto.php';
 $prod = new Produto();
 $prod->setIdProduto($_GET['idProduto']);
 $produto = $prod->view();
-var_dump($produto);
 ?>
 <div class="content-wrapper">
   <div id="main" class="container-fluid">

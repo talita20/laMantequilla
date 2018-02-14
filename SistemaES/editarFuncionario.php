@@ -19,19 +19,19 @@ $funcionario = $func->view();
                 <!-- text input -->
                 <div class="form-group">
                   <label>Nome</label>
-                  <input type="text" name="nome" class="form-control" value="<?php echo $funcionario->nome ?>">
+                  <input type="text" name="nome" class="form-control" value="<?php echo $funcionario->nome ?>" required>
                 </div>
                 <div class="form-group">
                   <label>CPF</label>
-                  <input type="text" name="cpf" class="form-control" value="<?php echo $funcionario->cpf ?>" maxlength="11">
+                  <input type="text" name="cpf" class="form-control" value="<?php echo $funcionario->cpf ?>" maxlength="11" required>
                 </div>
                 <div class="form-group">
                   <label>Endereço</label>
-                  <input type="text" name="endereco" class="form-control" value="<?php echo $funcionario->endereco ?>">
+                  <input type="text" name="endereco" class="form-control" value="<?php echo $funcionario->endereco ?>" required>
                 </div>
                 <div class="form-group">
                   <label>Cargo</label>
-                  <input type="text" name="cargo" class="form-control" value="<?php echo $funcionario->cargo ?>">
+                  <input type="text" name="cargo" class="form-control" value="<?php echo $funcionario->cargo ?>" required>
                 </div>
             </div>
            <div class="box-footer">

@@ -18,10 +18,6 @@ if(isset($_POST['insert'])){
   }
 }
 
-if(isset($_POST['cancel'])){
-  header("Location: cadastrarProduto.php");
-}
-
 ?>
 <div class="content-wrapper">
   <?php
@@ -51,15 +47,15 @@ if(isset($_POST['cancel'])){
           <!-- text input -->
          <!--  <div class="form-group">
             <label>Código</label>
-            <input type="text" nome="codigo" class="form-control" placeholder="Digite o código" required>
+            <input type="text" nome="codigo" class="form-control" placeholder="Digite o código" >
           </div> -->
           <div class="form-group">
             <label>Nome</label>
-            <input type="text" name="nome" class="form-control" placeholder="Digite o nome" required>
+            <input type="text" name="nome" class="form-control" placeholder="Digite o nome" >
           </div>
           <div class="form-group">
             <label>Quantidade</label>
-            <input type="number" name="quantidade" class="form-control" placeholder="Digite a quantidade" required>
+            <input type="number" name="quantidade" class="form-control" placeholder="Digite a quantidade" >
           </div>
           <div class="form-group">
             <label>Descrição</label>
@@ -78,11 +74,12 @@ if(isset($_POST['cancel'])){
           <div class="box-footer">
             <button type="submit" name="insert" class="btn btn-success">Enviar</button>
             <a href="./produtos.php">
-              <button type="submit" class="btn btn-danger">Cancelar</button>
+              <button type="button" class="btn btn-danger">Cancelar</button>
             </a>
           </div>
-        </form>
-      </div>
+        </div>
+      </form>
+
       
       <!-- /.box-body -->
     </div>
@@ -102,7 +99,7 @@ if(isset($_POST['cancel'])){
   active.classList.add("active");
 
   function moeda(z) {
-        v = z.value;
+    v = z.value;
         v = v.replace(/\D/g, "") // permite digitar apenas numero
         v = v.replace(/(\d{1})(\d{14})$/, "$1.$2") // coloca ponto antes dos ultimos digitos
         v = v.replace(/(\d{1})(\d{11})$/, "$1.$2") // coloca ponto antes dos ultimos 11 digitos
@@ -110,11 +107,11 @@ if(isset($_POST['cancel'])){
         v = v.replace(/(\d{1})(\d{5})$/, "$1.$2") // coloca ponto antes dos ultimos 5 digitos
         v = v.replace(/(\d{1})(\d{1,2})$/, "$1,$2") // coloca virgula antes dos ultimos 2 digitos
         z.value = v;
-    }
-</script>
+      }
+    </script>
 
 
 
-<?php
-require_once 'footer.php';
-?>
+    <?php
+    require_once 'footer.php';
+    ?>

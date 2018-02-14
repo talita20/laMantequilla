@@ -22,7 +22,7 @@ class Fornecedor{
 	}
 
 	function setIdFornecedor($value){
-		$this->idfornecedor = $value;
+		$this->idFornecedor = $value;
 	}
 
 	function setNomeEmpresa($value){
@@ -76,7 +76,7 @@ class Fornecedor{
 	public function edit(){
 		try{
 			$stmt = $this->conn->prepare("UPDATE `fornecedor` SET `nomeEmpresa` = :nomeEmpresa, `nomeRepresentante` = :nomeRepresentante, `cnpj` = :cnpj, `endereco` = :endereco, `telefoneEmpresa` = :telefoneEmpresa, `telefoneRepresentante` = :telefoneRepresentante, `emailEmpresa` = :emailEmpresa, `emailRepresentante` = :emailRepresentante  WHERE `idFornecedor` = :idFornecedor");
-			$stmt->bindParam(":idFornecedor", $this->id);
+			$stmt->bindParam(":idFornecedor", $this->idFornecedor);
 			$stmt->bindParam(":nomeEmpresa", $this->nomeEmpresa);
 			$stmt->bindParam(":nomeRepresentante", $this->nomeRepresentante);
 			$stmt->bindParam(":cnpj", $this->cnpj);
